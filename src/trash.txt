@@ -1,0 +1,40 @@
+//    private static class Token implements Comparable<Token> {
+//
+//        public enum TokenType {
+//            OPERAND, FUNCTION, OPENING_BRACKET, CLOSING_BRACKET
+//        }
+//
+//        private static final ArrayList<String> OPERANDS = new ArrayList<>("+", "-", "*", "/", "^");
+//        private static final ArrayList<String> FUNCTIONS = new ArrayList<>("sin", "cos");
+//
+//        TokenType type;
+//        String value;
+//
+//        public Token(String value) {
+//            this.value = value;
+//            if (OPERANDS.contains(value))
+//                type = TokenType.OPERAND;
+//            else if (FUNCTIONS.contains(value))
+//                type = TokenType.FUNCTION;
+//            else
+//                throw new IllegalArgumentException();
+//        }
+//
+//        private int getPriority() {
+//            return switch (value) {
+//                case "+", "-" -> 1;
+//                case "*", "/" -> 2;
+//                case "^" -> 3;
+//                case "sin", "cos", "(", ")" -> 0;
+//                default -> -1;
+//            };
+//        }
+//
+//        @Override
+//        public int compareTo(Token o) {
+//            if (type == o.type)
+//                return getPriority() - o.getPriority();
+//            else
+//                return type == TokenType.FUNCTION ? 1 : -1;
+//        }
+//    }
